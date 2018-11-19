@@ -306,19 +306,19 @@
 
 
   
-    <article id="post-c-e8-af-ad-e8-a8-80-e6-96-87-e4-bb-b6-e5-8f-8a-e5-85-b6-e8-af-bb-e5-86-99" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-c语言文件及其读写" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/29/c-e8-af-ad-e8-a8-80-e6-96-87-e4-bb-b6-e5-8f-8a-e5-85-b6-e8-af-bb-e5-86-99/">c语言文件及其读写</a>
+      <a class="article-title" href="/2017/12/29/c语言文件及其读写/">c语言文件及其读写</a>
     </h1>
   
 
         
-        <a href="/2017/12/29/c-e8-af-ad-e8-a8-80-e6-96-87-e4-bb-b6-e5-8f-8a-e5-85-b6-e8-af-bb-e5-86-99/" class="archive-article-date">
+        <a href="/2017/12/29/c语言文件及其读写/" class="archive-article-date">
   	<time datetime="2017-12-29T03:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
 </a>
         
@@ -326,7 +326,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>转自：<a href="http://blog.csdn.net/zhq654473607/article/details/7376082" target="_blank" rel="noopener">c语言文件及其读写详解 - CSDN博客</a> 1. <strong>需要了解的概念</strong> 包括：数据流、缓冲区、文件类型、文件存取方式 1.1 <strong>数据流</strong>： 指程序与数据的交互是以流的形式进行的。进行C语言文件的存取时，都会先进行“打开文件”操作，这个操作就是在打开数据流，而“关闭文件”操作就是关闭数据流。 1.2 <strong>缓冲区(Buffer)</strong>： 指在程序执行时，所提供的额外内存，可用来暂时存放做准备执行的数据。它的设置是为了提高存取效率，因为内存的存取速度比磁盘驱动器快得多。 C语言中带缓冲区的文件处理： C语言的文件处理功能依据系统是否设置“缓冲区”分为两种：一种是设置缓冲区，另一种是不设置缓冲区。由于不设置缓冲区的文件处理方式，必须使用较低级的I/O函数(包含在头文件io.h和fcntl.h中)来直接对磁盘存取，这种方式的存取速度慢，并且由于不是C的标准函数，跨平台操作时容易出问题。 下面只介绍第一种处理方式，即设置缓冲区的文件处理方式： 当使用标准I/O函数(包含在头文件stdio.h中)时，系统会自动设置缓冲区，并通过数据流来读写文件。当进行文件读取时，不会直接对磁盘进行读取，而是先打开数据流，将磁盘上的文件信息拷贝到缓冲区内，然后程序再从缓冲区中读取所需数据。当写入文件时，并不会马上写入磁盘中，而是先写入缓冲区，只有在缓冲区已满或“关闭文件”时，才会将数据写入磁盘。如下图所示： 1.3 <strong>文件类型</strong>： 分为文本文件和二进制文件两种。 文本文件是以字符编码的方式进行保存的。二进制文件将内存中数据原封不至文件中，适用于非字符为主的数据。如果以记事本打开，只会看到一堆乱码。 其实，除了文本文件外，所有的数据都可以算是二进制文件。二进制文件的优点在于存取速度快，占用空间小，以及可随机存取数据。 1.4 <strong>文件存取方式</strong>： 包括顺序存取方式和随机存取方式两种。 顺序读取也就是从上往下，一笔一笔读取文件的内容。保存数据时，将数据附加在文件的末尾。这种存取方式常用于文本文件，而被存取的文件则称为顺序文件。 随机存取方式多半以二进制文件为主。它会以一个完整的单位来进行数据的读取和写入，通常以结构为单位。 2 <strong>文本文件操作</strong> C语言中主要通过标准I/O函数来对文本文件进行处理。相关的操作包括打开、读写、关闭与设置缓冲区。 相关的存取函数有：<strong>fopen(), fclose(), fgetc(), fputc(), fgets(), fputs(), fprintf(), fscanf()</strong>等。 2.1 <strong>打开文件</strong> 函数原型：FILE *fopen(const char *path, const char *mode); 说明： path：指定文件位置 mode：打开模式 打开成功，fopen返回文件指针，否则返回一个NULL</p>
+        <p>转自：<a href="http://blog.csdn.net/zhq654473607/article/details/7376082" target="_blank" rel="noopener">c语言文件及其读写详解 - CSDN博客</a><br>1. <strong>需要了解的概念</strong><br>包括：数据流、缓冲区、文件类型、文件存取方式  </p>
+<p>1.1 <strong>数据流</strong>： </p>
+<p>指程序与数据的交互是以流的形式进行的。进行C语言文件的存取时，都会先进行“打开文件”操作，这个操作就是在打开数据流，而“关闭文件”操作就是关闭数据流。 </p>
+<p>1.2 <strong>缓冲区(Buffer)</strong>： </p>
+<p>指在程序执行时，所提供的额外内存，可用来暂时存放做准备执行的数据。它的设置是为了提高存取效率，因为内存的存取速度比磁盘驱动器快得多。 </p>
+<p>C语言中带缓冲区的文件处理： </p>
+<p>C语言的文件处理功能依据系统是否设置“缓冲区”分为两种：一种是设置缓冲区，另一种是不设置缓冲区。由于不设置缓冲区的文件处理方式，必须使用较低级的I/O函数(包含在头文件io.h和fcntl.h中)来直接对磁盘存取，这种方式的存取速度慢，并且由于不是C的标准函数，跨平台操作时容易出问题。 </p>
+<p>下面只介绍第一种处理方式，即设置缓冲区的文件处理方式： </p>
+<p>当使用标准I/O函数(包含在头文件stdio.h中)时，系统会自动设置缓冲区，并通过数据流来读写文件。当进行文件读取时，不会直接对磁盘进行读取，而是先打开数据流，将磁盘上的文件信息拷贝到缓冲区内，然后程序再从缓冲区中读取所需数据。当写入文件时，并不会马上写入磁盘中，而是先写入缓冲区，只有在缓冲区已满或“关闭文件”时，才会将数据写入磁盘。如下图所示：  </p>
+<p><img src="https://i.imgur.com/1XzWHbd.png" alt="">  </p>
+<p>1.3 <strong>文件类型</strong>： </p>
+<p>分为文本文件和二进制文件两种。 </p>
+<p>文本文件是以字符编码的方式进行保存的。二进制文件将内存中数据原封不至文件中，适用于非字符为主的数据。如果以记事本打开，只会看到一堆乱码。 </p>
+<p>其实，除了文本文件外，所有的数据都可以算是二进制文件。二进制文件的优点在于存取速度快，占用空间小，以及可随机存取数据。 </p>
+<p>1.4 <strong>文件存取方式</strong>： </p>
+<p>包括顺序存取方式和随机存取方式两种。 </p>
+<p>顺序读取也就是从上往下，一笔一笔读取文件的内容。保存数据时，将数据附加在文件的末尾。这种存取方式常用于文本文件，而被存取的文件则称为顺序文件。 </p>
+<p>随机存取方式多半以二进制文件为主。它会以一个完整的单位来进行数据的读取和写入，通常以结构为单位。 </p>
+<p>2 <strong>文本文件操作</strong> </p>
+<p>C语言中主要通过标准I/O函数来对文本文件进行处理。相关的操作包括打开、读写、关闭与设置缓冲区。 </p>
+<p>相关的存取函数有：<strong>fopen(), fclose(), fgetc(), fputc(), fgets(), fputs(), fprintf(), fscanf()</strong>等。 </p>
+<p>2.1 <strong>打开文件</strong> </p>
+<p>函数原型：FILE *fopen(const char *path, const char *mode);<br>说明： </p>
+<p>path：指定文件位置 </p>
+<p>mode：打开模式 打开成功，fopen返回文件指针，否则返回一个NULL</p>
 <pre><code>#include&lt;stdio.h&gt;
 int main()
 {
@@ -338,10 +362,31 @@ int main()
     }
     return 0;
 }
-
-
-   使用fopen()函数打开的文件会先将文件复制到缓冲区。注意：所下达的读取或写入动作，都是针对缓冲区进行存取而不是磁盘，只有当使用fclose()函数关闭文件时，缓冲区中的数据才会写入磁盘。
-</code></pre><p>文件打开模式： “r” 只读 从文件起始位置开始读。 注意：文件不存在时，打卡失败。 “r+” 读写（以读为主） 文件不存在时，打开失败。 文件存在时，如果没设置文件指针，文件指针指向文件首。 “w” 只写 文件不存在时，创建文件。 文件存在时，清空文件，文件指针指向文件首。 “w+” 写读（以写为主） 文件不存在时，创建文件。 文件存在时，清空文件，文件指针指向文件首。 “a” 追加写（只写） 文件不存在时，创建文件。 文件存在时，文件指针指向文件尾。（在文件为追加,即用fseek（）函数无效） “a+” 追加读写（读写） 文件不存在时，创建文件。 文件存在时： 写：追加写（文件指针设置无效） 读：先设置文件指针，写完之后文件指针在文件尾（最初，文件指针在文件首） 二进制文件模式： 二进制文件的模式与打开文本文件的含义是一样的，不同的是模式名称里面多一个字母’b’，以表示以二进制形式打开文件。即：rb（只读）、rb+（读写） wb（只写） wb+（读写） ab（追加，写） ab+（追加，读写） 2.2 <strong>关闭文件</strong> 函数原型：<strong>int fclose(FILE *fp);</strong> 说明：关闭成功返回值0，否则返回EOF 注：在执行完文件的操作后，要进行“关闭文件”操作。虽然程序在结束前会自动关闭所有的打开文件，但文件打开过多会导致系统运行缓慢，这时就要自行手动关闭不再使用的文件，来提高系统整体的执行效率。 下面为文件的打开关闭：</p>
+</code></pre><p><strong>使用fopen()函数打开的文件会先将文件复制到缓冲区。注意：所下达的读取或写入动作，都是针对缓冲区进行存取而不是磁盘，只有当使用fclose()函数关闭文件时，缓冲区中的数据才会写入磁盘。</strong></p>
+<p>文件打开模式：<br>“r” 只读<br>从文件起始位置开始读。 注意：文件不存在时，打卡失败。 </p>
+<p>“r+” 读写（以读为主） </p>
+<p>文件不存在时，打开失败。 </p>
+<p>文件存在时，如果没设置文件指针，文件指针指向文件首。 </p>
+<p>“w” 只写 </p>
+<p>文件不存在时，创建文件。 </p>
+<p>文件存在时，清空文件，文件指针指向文件首。 </p>
+<p>“w+” 写读（以写为主） </p>
+<p>文件不存在时，创建文件。 </p>
+<p>文件存在时，清空文件，文件指针指向文件首 </p>
+<p>“a” 追加写（只写） </p>
+<p>文件不存在时，创建文件。 </p>
+<p>文件存在时，文件指针指向文件尾。（在文件为追加,即用fseek（）函数无效） </p>
+<p>“a+” 追加读写（读写） </p>
+<p>文件不存在时，创建文件。 </p>
+<p>文件存在时： </p>
+<p>写：追加写（文件指针设置无效） </p>
+<p>读：先设置文件指针，写完之后文件指针在文件尾（最初，文件指针在文件首） </p>
+<p>二进制文件模式： 二进制文件的模式与打开文本文件的含义是一样的，不同的是模式名称里面多一个字母’b’，以表示以二进制形式打开文件。即：rb（只读）、rb+（读写） wb（只写） wb+（读写） ab（追加，写） ab+（追加，读写） </p>
+<p>2.2 <strong>关闭文件</strong> </p>
+<p>函数原型：<strong>int fclose(FILE *fp);</strong> </p>
+<p>说明：关闭成功返回值0，否则返回EOF </p>
+<p>注：在执行完文件的操作后，要进行“关闭文件”操作。虽然程序在结束前会自动关闭所有的打开文件，但文件打开过多会导致系统运行缓慢，这时就要自行手动关闭不再使用的文件，来提高系统整体的执行效率。 </p>
+<p>下面为文件的打开关闭：</p>
 <pre><code>#include&lt;stdio.h&gt;
 int main()
 {
@@ -354,7 +399,17 @@ int main()
     fclose(fp);
     return 0;
 }
-</code></pre><p>2.3 字符存取函数 函数原型： <strong>int fputc(int c, FILE *stream);</strong> <strong>int fgetc(FILE *stream);</strong> <strong>int feof(FILE *stream);</strong> <strong>fgetc()：</strong> 可从文件数据流中一次读取一个字符，然后读取光标移动到下一个字符，并逐步将文件的内容读出。 如果字符读取成功，则返回所读取的字符，否则返回EOF(end of file)。 EOF是表示数据结尾的常量，真值为-1。另外，要判断文件是否读取完毕，可利用feof()进行检查。未完返回0，已完返回非零值。 <strong>fgetc()函数的使用</strong> 版本1：利用feof()函数检查文件是否读取完毕</p>
+</code></pre><p>2.3 <strong>字符存取函数</strong> </p>
+<p>函数原型： </p>
+<p><strong>int fputc(int c, FILE *stream);</strong> </p>
+<p><strong>int fgetc(FILE *stream);</strong> </p>
+<p><strong>int feof(FILE *stream);</strong> </p>
+<p><strong>fgetc()：</strong> </p>
+<p>可从文件数据流中一次读取一个字符，然后读取光标移动到下一个字符，并逐步将文件的内容读出。 </p>
+<p>如果字符读取成功，则返回所读取的字符，否则返回EOF(end of file)。 </p>
+<p>EOF是表示数据结尾的常量，真值为-1。另外，要判断文件是否读取完毕，可利用feof()进行检查。未完返回0，已完返回非零值。 </p>
+<p><strong>fgetc()函数的使用</strong> </p>
+<p>版本1：利用feof()函数检查文件是否读取完毕</p>
 <pre><code>#include &lt;stdio.h&gt;
 int main()
 {
@@ -428,7 +483,55 @@ main()
     fclose(fp);
     return 0;
 }
-</code></pre><p>2.4 <strong>字符串存取函数</strong> 函数原型： <strong>int fputs(const char *s, FILE *stream);</strong> <strong>char *fgets(char *s, int size, FILE *stream);</strong> 说明： fgets函数的作用是从指定文件读入一个字符串，如：fgets(str, size, fp); 参数size为要求得到的字符个数，但只从fp指向的文件输入n-1个字符，然后在最后加一个’\0’字符，因此得到的字符串共有n个字符，把它们放在字符数组str中。 如果在读完n-1个字符之前遇到换行符或EOF，读入结束。 fputs函数的作用是向指定文件输出一个字符串，如：fputs(“Hey”, fp); 把字符串”Hey”输出到fp指向的文件。fputs函数的第一个参数可以是字符串常量、字符数组名或字符型指针。若输出成功，则返回1，否则返回EOF。 2.5 <strong>格式化存取函数</strong> 函数原型： <strong>int fprintf(FILE *stream, const char *format, …);</strong> <strong>int fscanf(FILE *stream, const char *format, …);</strong> 说明： 它们与printf和scanf函数相仿，都是格式化读写函数。 不同的是：fprintf和fscanf函数的读写对象不是终端(标准输入输出)，而是磁盘文件。 printf函数是将内容输出到终端(屏幕)，因此，fprintf就是将内容输出到磁盘文件了。 2.6 <strong>指针重返函数rewind</strong> 函数原型： <strong>void rewind(FILE *stream);</strong> 说明： rewind函数的作用是使位置指针重返回文件的开头，属于文件的定位。 等价于： (void) fseek(stream, 0L, SEEK_SET) 2.7 <strong>文件指针设置函数fseek</strong> 函数原型： <strong>int fseek(FILE *stream, long offset, intstart);</strong> 说明： 对流式文件可以进行顺序读写，也可以进行随机读写。 关键在于控制文件的位置指针，如果位置指针是按字节位置顺序移动的，就是顺序读写。 如果能将位置指针按需要移动到任意位置，就可以实现随机读写。 所谓随机读写，是指读完上一个字符(字节)后，并不一定要读写其后续的字符(字节)，而可以读写文件中任意位置上所需要的字符(字节)。 start：起始点（用0、1、2代替） 0代表文件开始，名字为SEEK_SET， 1代表当前位置，名字为SEEK_CUR， 2代表文件末尾，名字为SEEK_END。 fseek()函数一般用于二进制文件，因为文本文件要发生字符转换，计算位置时往往会发生混乱。 2.8 <strong>获得文件指针位置ftell</strong> 函数原型： <strong>long ftell(FILE *stream);</strong> 说明： 获得当前文件指针位置 3.<strong>二进制文件操作 </strong> 3.1 <strong>数据块存取函数</strong> 函数原型： <strong>size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);</strong> <strong>size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);</strong> 说明： ptr：对于fread来说，指的是读入数据的存放地址；对于fwrite来说，是要输出数据的地址。 size：读写数据时，每笔数据的大小 nmemb：读写数据的笔数 fp：文件指针 <strong>fwrite函数</strong>：</p>
+</code></pre><p>2.4 <strong>字符串存取函数</strong> </p>
+<p>函数原型： </p>
+<p><strong>int fputs(const char *s, FILE *stream);</strong> </p>
+<p><strong>char *fgets(char *s, int size, FILE *stream);</strong> </p>
+<p>说明： </p>
+<p>fgets函数的作用是从指定文件读入一个字符串，如：fgets(str, size, fp); </p>
+<p>参数size为要求得到的字符个数，但只从fp指向的文件输入n-1个字符，然后在最后加一个’\0’字符，因此得到的字符串共有n个字符，把它们放在字符数组str中。 </p>
+<p>如果在读完n-1个字符之前遇到换行符或EOF，读入结束。 </p>
+<p>fputs函数的作用是向指定文件输出一个字符串，如：fputs(“Hey”, fp); 把字符串”Hey”输出到fp指向的文件。fputs函数的第一个参数可以是字符串常量、字符数组名或字符型指针。若输出成功，则返回1，否则返回EOF。 </p>
+<p>2.5 <strong>格式化存取函数</strong> </p>
+<p>函数原型： </p>
+<p><strong>int fprintf(FILE *stream, const char *format, …);</strong> </p>
+<p><strong>int fscanf(FILE *stream, const char *format, …);</strong> </p>
+<p>说明： </p>
+<p>它们与printf和scanf函数相仿，都是格式化读写函数。 </p>
+<p>不同的是：fprintf和fscanf函数的读写对象不是终端(标准输入输出)，而是磁盘文件。 </p>
+<p>printf函数是将内容输出到终端(屏幕)，因此，fprintf就是将内容输出到磁盘文件了。 </p>
+<p>2.6 <strong>指针重返函数rewind</strong> </p>
+<p>函数原型： </p>
+<p><strong>void rewind(FILE *stream);</strong> </p>
+<p>说明： </p>
+<p>rewind函数的作用是使位置指针重返回文件的开头，属于文件的定位。 </p>
+<p>等价于： (void) fseek(stream, 0L, SEEK_SET) </p>
+<p>2.7 <strong>文件指针设置函数fseek</strong> </p>
+<p>函数原型： </p>
+<p><strong>int fseek(FILE *stream, long offset, intstart);</strong> </p>
+<p>说明： 对流式文件可以进行顺序读写，也可以进行随机读写。 </p>
+<p>关键在于控制文件的位置指针，如果位置指针是按字节位置顺序移动的，就是顺序读写。 </p>
+<p>如果能将位置指针按需要移动到任意位置，就可以实现随机读写。 </p>
+<p>所谓随机读写，是指读完上一个字符(字节)后，并不一定要读写其后续的字符(字节)，而可以读写文件中任意位置上所需要的字符(字节)。 </p>
+<p>start：起始点（用0、1、2代替） </p>
+<p>0代表文件开始，名字为SEEK_SET， </p>
+<p>1代表当前位置，名字为SEEK_CUR， </p>
+<p>2代表文件末尾，名字为SEEK_END。 </p>
+<p>fseek()函数一般用于二进制文件，因为文本文件要发生字符转换，计算位置时往往会发生混乱。 </p>
+<p>2.8 <strong>获得文件指针位置ftell</strong> </p>
+<p>函数原型： <strong>long ftell(FILE *stream);</strong> </p>
+<p>说明： 获得当前文件指针位置 </p>
+<p>3.<strong>二进制文件操作 </strong> </p>
+<p>3.1 <strong>数据块存取函数</strong> </p>
+<p>函数原型： </p>
+<p><strong>size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);</strong> </p>
+<p><strong>size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);</strong> </p>
+<p>说明： </p>
+<p>ptr：对于fread来说，指的是读入数据的存放地址；对于fwrite来说，是要输出数据的地址。 </p>
+<p>size：读写数据时，每笔数据的大小 </p>
+<p>nmemb：读写数据的笔数 </p>
+<p>fp：文件指针 </p>
+<p><strong>fwrite函数</strong>：</p>
 <pre><code>#include&lt;stdio.h&gt;
 int main()
 {
@@ -462,7 +565,25 @@ int main()
     fclose(fp);
     return 0;
 }
-</code></pre><p>4 <strong>其他(ungetc,getchar ,putchar,printf,scanf,sprintf,sscanf)</strong> 函数原型： <strong>int ungetc(int c, FILE *stream); int getchar(void); int putchar(int c); int scanf(const char *format, …); int sscanf(const char *str, const char *format, …); int printf(const char *format, …); int sprintf(char *str, const char *format, …); int snprintf(char *str, size_t size, const char *format, …);</strong> 说明： ungetc:将刚从流中读入的字符放回到流。（注意：只能回放一个） getchar() 等价于getc(stdin) 即，从键盘获取字符 putchar()等价于putc(c, stdout)即，向显示器写字符 scanf() 标准输入 sscanf():用法与scanf类似，只是从指定string读取 printf():标准输出 sprintf():用法与printf类似，只是写入的是指定string，可以把任何数据转换成你想要的字符串格式 <strong>以下内容转自</strong>：<a href="http://blog.csdn.net/wait_for_taht_day5/article/details/50700471" target="_blank" rel="noopener">【C语言】文件常用读写操作（含读取学生信息示例）CSDN</a> <strong>int feof(FILE *stream);</strong></p>
+</code></pre><p>4 <strong>其他(ungetc,getchar ,putchar,printf,scanf,sprintf,sscanf)</strong> </p>
+<p>函数原型： </p>
+<p>*<em>int ungetc(int c, FILE \</em>stream); </p>
+<p>int getchar(void); int putchar(int c); </p>
+<p>int scanf(const char *format, …); </p>
+<p>int sscanf(const char *str, const char *format, …);  </p>
+<p>int printf(const char *format, …); </p>
+<p>int sprintf(char *str, const char *format, …); </p>
+<p>int snprintf(char *str, size_t size, const char *format, …);** </p>
+<p>说明： </p>
+<p>ungetc:将刚从流中读入的字符放回到流。（注意：只能回放一个）  </p>
+<p>getchar() 等价于getc(stdin) 即，从键盘获取字符 </p>
+<p>putchar()等价于putc(c, stdout)即，向显示器写字符 </p>
+<p>scanf() 标准输入 </p>
+<p>sscanf():用法与scanf类似，只是从指定string读取 </p>
+<p>printf():标准输出 </p>
+<p>sprintf():用法与printf类似，只是写入的是指定string，可以把任何数据转换成你想要的字符串格式 </p>
+<p><strong>以下内容转自</strong>：<a href="http://blog.csdn.net/wait_for_taht_day5/article/details/50700471" target="_blank" rel="noopener">【C语言】文件常用读写操作（含读取学生信息示例）CSDN</a> </p>
+<p><strong>int feof(FILE *stream);</strong></p>
 <pre><code>#include&lt;stdio.h&gt;
 int main(void)
 {
@@ -478,7 +599,9 @@ int main(void)
     fclose(stream);
     return 0;
 }
-</code></pre><p>feof(fp)有两个返回值:如果遇到文件结束，函数feof（fp）的值为非零值，否则为0。 EOF是文本文件结束的标志。在文本文件中，数据是以字符的ASCⅡ代码值的形式存放，普通字符的ASCⅡ代码的范围是32到127（十进制），EOF的16进制代码为0xFF（十进制为-1），因此可以用EOF作为文件结束标志。[2] 当把数据以二进制形式存放到文件中时，就会有-1值的出现，因此不能采用EOF作为二进制文件的结束标志。为解决这一个问题，ASCI C提供一个feof函数，用来判断文件是否结束。feof函数既可用以判断二进制文件又可用以判断文本文件。</p>
+</code></pre><p>feof(fp)有两个返回值:如果遇到文件结束，函数feof（fp）的值为非零值，否则为0。 </p>
+<p>EOF是文本文件结束的标志。在文本文件中，数据是以字符的ASCⅡ代码值的形式存放，普通字符的ASCⅡ代码的范围是32到127（十进制），EOF的16进制代码为0xFF（十进制为-1），因此可以用EOF作为文件结束标志。[2] 当把数据以二进制形式存放到文件中时，就会有-1值的出现，因此不能采用EOF作为二进制文件的结束标志。 </p>
+<p>为解决这一个问题，ASCI C提供一个feof函数，用来判断文件是否结束。feof函数既可用以判断二进制文件又可用以判断文本文件。</p>
 <pre><code>#include&lt;stdio.h&gt;
 int a;
 char b,c[100];
@@ -517,7 +640,10 @@ int main()
     fclose(fp);
     return 0;
 }
-</code></pre><p><strong>rewind(steam)</strong> C 程序中的库函数，功能是将文件内部的指针重新指向一个流的开头 C中的fseek函数使用 转自：<a href="https://www.cnblogs.com/xingyunblog/p/3675568.html" target="_blank" rel="noopener">https://www.cnblogs.com/xingyunblog/p/3675568.html</a></p>
+</code></pre><p><strong>rewind(steam)</strong> </p>
+<p>C 程序中的库函数，功能是将文件内部的指针重新指向一个流的开头 </p>
+<p>C中的fseek函数使用 </p>
+<p>转自：<a href="https://www.cnblogs.com/xingyunblog/p/3675568.html" target="_blank" rel="noopener">https://www.cnblogs.com/xingyunblog/p/3675568.html</a></p>
 
       
 
@@ -556,7 +682,7 @@ int main()
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/29/c-e8-af-ad-e8-a8-80-e6-96-87-e4-bb-b6-e5-8f-8a-e5-85-b6-e8-af-bb-e5-86-99/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/12/29/c语言文件及其读写/">展开全文 >></a>
         </p>
       
 

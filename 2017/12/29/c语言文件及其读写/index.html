@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/12 | Zrincet的想法</title>
+  <title>c语言文件及其读写 | Zrincet的想法</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Zrincet的想法">
-<meta property="og:url" content="http://yoursite.com/archives/2017/12/index.html">
+  <meta name="description" content="转自：c语言文件及其读写详解 - CSDN博客1. 需要了解的概念包括：数据流、缓冲区、文件类型、文件存取方式   1.1 数据流：  指程序与数据的交互是以流的形式进行的。进行C语言文件的存取时，都会先进行“打开文件”操作，这个操作就是在打开数据流，而“关闭文件”操作就是关闭数据流。  1.2 缓冲区(Buffer)：  指在程序执行时，所提供的额外内存，可用来暂时存放做准备执行的数据。它的设置">
+<meta name="keywords" content="文件,读写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c语言文件及其读写">
+<meta property="og:url" content="http://yoursite.com/2017/12/29/c语言文件及其读写/index.html">
 <meta property="og:site_name" content="Zrincet的想法">
+<meta property="og:description" content="转自：c语言文件及其读写详解 - CSDN博客1. 需要了解的概念包括：数据流、缓冲区、文件类型、文件存取方式   1.1 数据流：  指程序与数据的交互是以流的形式进行的。进行C语言文件的存取时，都会先进行“打开文件”操作，这个操作就是在打开数据流，而“关闭文件”操作就是关闭数据流。  1.2 缓冲区(Buffer)：  指在程序执行时，所提供的额外内存，可用来暂时存放做准备执行的数据。它的设置">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.imgur.com/1XzWHbd.png">
+<meta property="og:updated_time" content="2018-11-19T16:26:44.156Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zrincet的想法">
+<meta name="twitter:title" content="c语言文件及其读写">
+<meta name="twitter:description" content="转自：c语言文件及其读写详解 - CSDN博客1. 需要了解的概念包括：数据流、缓冲区、文件类型、文件存取方式   1.1 数据流：  指程序与数据的交互是以流的形式进行的。进行C语言文件的存取时，都会先进行“打开文件”操作，这个操作就是在打开数据流，而“关闭文件”操作就是关闭数据流。  1.2 缓冲区(Buffer)：  指在程序执行时，所提供的额外内存，可用来暂时存放做准备执行的数据。它的设置">
+<meta name="twitter:image" content="https://i.imgur.com/1XzWHbd.png">
   
     <link rel="alternative" href="/atom.xml" title="Zrincet的想法" type="application/atom+xml">
   
@@ -150,36 +157,373 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-c语言文件及其读写" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/29/c语言文件及其读写/" class="archive-article-date">
-  	<time datetime="2017-12-29T03:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/29/c语言文件及其读写/">c语言文件及其读写</a>
+    <h1 class="article-title" itemprop="name">
+      c语言文件及其读写
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/29/c语言文件及其读写/" class="archive-article-date">
+  	<time datetime="2017-12-29T03:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>转自：<a href="http://blog.csdn.net/zhq654473607/article/details/7376082" target="_blank" rel="noopener">c语言文件及其读写详解 - CSDN博客</a><br>1. <strong>需要了解的概念</strong><br>包括：数据流、缓冲区、文件类型、文件存取方式  </p>
+<p>1.1 <strong>数据流</strong>： </p>
+<p>指程序与数据的交互是以流的形式进行的。进行C语言文件的存取时，都会先进行“打开文件”操作，这个操作就是在打开数据流，而“关闭文件”操作就是关闭数据流。 </p>
+<p>1.2 <strong>缓冲区(Buffer)</strong>： </p>
+<p>指在程序执行时，所提供的额外内存，可用来暂时存放做准备执行的数据。它的设置是为了提高存取效率，因为内存的存取速度比磁盘驱动器快得多。 </p>
+<p>C语言中带缓冲区的文件处理： </p>
+<p>C语言的文件处理功能依据系统是否设置“缓冲区”分为两种：一种是设置缓冲区，另一种是不设置缓冲区。由于不设置缓冲区的文件处理方式，必须使用较低级的I/O函数(包含在头文件io.h和fcntl.h中)来直接对磁盘存取，这种方式的存取速度慢，并且由于不是C的标准函数，跨平台操作时容易出问题。 </p>
+<p>下面只介绍第一种处理方式，即设置缓冲区的文件处理方式： </p>
+<p>当使用标准I/O函数(包含在头文件stdio.h中)时，系统会自动设置缓冲区，并通过数据流来读写文件。当进行文件读取时，不会直接对磁盘进行读取，而是先打开数据流，将磁盘上的文件信息拷贝到缓冲区内，然后程序再从缓冲区中读取所需数据。当写入文件时，并不会马上写入磁盘中，而是先写入缓冲区，只有在缓冲区已满或“关闭文件”时，才会将数据写入磁盘。如下图所示：  </p>
+<p><img src="https://i.imgur.com/1XzWHbd.png" alt="">  </p>
+<p>1.3 <strong>文件类型</strong>： </p>
+<p>分为文本文件和二进制文件两种。 </p>
+<p>文本文件是以字符编码的方式进行保存的。二进制文件将内存中数据原封不至文件中，适用于非字符为主的数据。如果以记事本打开，只会看到一堆乱码。 </p>
+<p>其实，除了文本文件外，所有的数据都可以算是二进制文件。二进制文件的优点在于存取速度快，占用空间小，以及可随机存取数据。 </p>
+<p>1.4 <strong>文件存取方式</strong>： </p>
+<p>包括顺序存取方式和随机存取方式两种。 </p>
+<p>顺序读取也就是从上往下，一笔一笔读取文件的内容。保存数据时，将数据附加在文件的末尾。这种存取方式常用于文本文件，而被存取的文件则称为顺序文件。 </p>
+<p>随机存取方式多半以二进制文件为主。它会以一个完整的单位来进行数据的读取和写入，通常以结构为单位。 </p>
+<p>2 <strong>文本文件操作</strong> </p>
+<p>C语言中主要通过标准I/O函数来对文本文件进行处理。相关的操作包括打开、读写、关闭与设置缓冲区。 </p>
+<p>相关的存取函数有：<strong>fopen(), fclose(), fgetc(), fputc(), fgets(), fputs(), fprintf(), fscanf()</strong>等。 </p>
+<p>2.1 <strong>打开文件</strong> </p>
+<p>函数原型：FILE *fopen(const char *path, const char *mode);<br>说明： </p>
+<p>path：指定文件位置 </p>
+<p>mode：打开模式 打开成功，fopen返回文件指针，否则返回一个NULL</p>
+<pre><code>#include&lt;stdio.h&gt;
+int main()
+{
+    FILE *fp;
+    if((fp=fopen(&quot;a.txt&quot;,&quot;r&quot;))==NULL)
+    {
+        printf(&quot;a.txt open failed ! \n&quot;);
+        return 1;
+    }
+    return 0;
+}
+</code></pre><p><strong>使用fopen()函数打开的文件会先将文件复制到缓冲区。注意：所下达的读取或写入动作，都是针对缓冲区进行存取而不是磁盘，只有当使用fclose()函数关闭文件时，缓冲区中的数据才会写入磁盘。</strong></p>
+<p>文件打开模式：<br>“r” 只读<br>从文件起始位置开始读。 注意：文件不存在时，打卡失败。 </p>
+<p>“r+” 读写（以读为主） </p>
+<p>文件不存在时，打开失败。 </p>
+<p>文件存在时，如果没设置文件指针，文件指针指向文件首。 </p>
+<p>“w” 只写 </p>
+<p>文件不存在时，创建文件。 </p>
+<p>文件存在时，清空文件，文件指针指向文件首。 </p>
+<p>“w+” 写读（以写为主） </p>
+<p>文件不存在时，创建文件。 </p>
+<p>文件存在时，清空文件，文件指针指向文件首 </p>
+<p>“a” 追加写（只写） </p>
+<p>文件不存在时，创建文件。 </p>
+<p>文件存在时，文件指针指向文件尾。（在文件为追加,即用fseek（）函数无效） </p>
+<p>“a+” 追加读写（读写） </p>
+<p>文件不存在时，创建文件。 </p>
+<p>文件存在时： </p>
+<p>写：追加写（文件指针设置无效） </p>
+<p>读：先设置文件指针，写完之后文件指针在文件尾（最初，文件指针在文件首） </p>
+<p>二进制文件模式： 二进制文件的模式与打开文本文件的含义是一样的，不同的是模式名称里面多一个字母’b’，以表示以二进制形式打开文件。即：rb（只读）、rb+（读写） wb（只写） wb+（读写） ab（追加，写） ab+（追加，读写） </p>
+<p>2.2 <strong>关闭文件</strong> </p>
+<p>函数原型：<strong>int fclose(FILE *fp);</strong> </p>
+<p>说明：关闭成功返回值0，否则返回EOF </p>
+<p>注：在执行完文件的操作后，要进行“关闭文件”操作。虽然程序在结束前会自动关闭所有的打开文件，但文件打开过多会导致系统运行缓慢，这时就要自行手动关闭不再使用的文件，来提高系统整体的执行效率。 </p>
+<p>下面为文件的打开关闭：</p>
+<pre><code>#include&lt;stdio.h&gt;
+int main()
+{
+    FILE *fp;
+    if((fp=fopen(&quot;a.txt&quot;,&quot;r&quot;))==NULL)
+    {
+        printf(&quot;a.txt open failed ! \n&quot;);
+        return 1;
+    }
+    fclose(fp);
+    return 0;
+}
+</code></pre><p>2.3 <strong>字符存取函数</strong> </p>
+<p>函数原型： </p>
+<p><strong>int fputc(int c, FILE *stream);</strong> </p>
+<p><strong>int fgetc(FILE *stream);</strong> </p>
+<p><strong>int feof(FILE *stream);</strong> </p>
+<p><strong>fgetc()：</strong> </p>
+<p>可从文件数据流中一次读取一个字符，然后读取光标移动到下一个字符，并逐步将文件的内容读出。 </p>
+<p>如果字符读取成功，则返回所读取的字符，否则返回EOF(end of file)。 </p>
+<p>EOF是表示数据结尾的常量，真值为-1。另外，要判断文件是否读取完毕，可利用feof()进行检查。未完返回0，已完返回非零值。 </p>
+<p><strong>fgetc()函数的使用</strong> </p>
+<p>版本1：利用feof()函数检查文件是否读取完毕</p>
+<pre><code>#include &lt;stdio.h&gt;
+int main()
+{
+    FILE *fp;   
+    fp = fopen(&quot;c:\\a.txt&quot;, &quot;r&quot;);
+    if(fp != NULL)
+    {
+        while(!feof(fp))
+        printf(&quot;%c&quot;, fgetc(fp));
+    }else
+    {
+        printf(&quot;file open failed! \n&quot;);
+    }
+    fclose(fp);
+    return 0;
+}
+</code></pre><p>版本2：利用文件结束标志EOF(即-1)</p>
+<pre><code>#include &lt;stdio.h&gt;
+main()
+{
+    char ch;
+    FILE *fp;
+    fp = fopen(&quot;c:\\a.txt&quot;, &quot;r&quot;);
+    if(fp != NULL)
+    {
+        ch = fgetc(fp);
+        while(ch != EOF)
+        {
+            printf(&quot;%c&quot;, ch);
+            ch = fgetc(fp);
+        }
+    }else
+    {
+        printf(&quot;file open failed! \n&quot;);
+    }
+    fclose(fp);
+    return 0;
+}
+</code></pre><p>版本3 - 重构版本2</p>
+<pre><code>#include &lt;stdio.h&gt;
+main()
+{
+    char ch;
+    FILE *fp;
+    if((fp = fopen(&quot;c:\\a.txt&quot;, &quot;r&quot;)) != NULL)
+    {
+        while((ch = fgetc(fp)) != EOF)
+        printf(&quot;%c&quot;, ch);
+    }else
+    {
+        printf(&quot;file open failed! \n&quot;);
+    }
+    fclose(fp);
+    return 0;
+}
+</code></pre><p><strong>fputc()函数的使用</strong></p>
+<pre><code>#include &lt;stdio.h&gt;
+main()
+{
+    FILE *fp;
+    if((fp=fopen(&quot;a.txt&quot;,&quot;w&quot;))==NULL)
+    {
+        printf(&quot;a.txt open failed ! \n&quot;);
+        return 1;
+    }
+    int i;
+    for(i=0; i&lt;10; i++)
+    {
+        putc(&apos;w&apos;,fp); //写10个&apos;w&apos;到a.txt文件中
+    }
+    fclose(fp);
+    return 0;
+}
+</code></pre><p>2.4 <strong>字符串存取函数</strong> </p>
+<p>函数原型： </p>
+<p><strong>int fputs(const char *s, FILE *stream);</strong> </p>
+<p><strong>char *fgets(char *s, int size, FILE *stream);</strong> </p>
+<p>说明： </p>
+<p>fgets函数的作用是从指定文件读入一个字符串，如：fgets(str, size, fp); </p>
+<p>参数size为要求得到的字符个数，但只从fp指向的文件输入n-1个字符，然后在最后加一个’\0’字符，因此得到的字符串共有n个字符，把它们放在字符数组str中。 </p>
+<p>如果在读完n-1个字符之前遇到换行符或EOF，读入结束。 </p>
+<p>fputs函数的作用是向指定文件输出一个字符串，如：fputs(“Hey”, fp); 把字符串”Hey”输出到fp指向的文件。fputs函数的第一个参数可以是字符串常量、字符数组名或字符型指针。若输出成功，则返回1，否则返回EOF。 </p>
+<p>2.5 <strong>格式化存取函数</strong> </p>
+<p>函数原型： </p>
+<p><strong>int fprintf(FILE *stream, const char *format, …);</strong> </p>
+<p><strong>int fscanf(FILE *stream, const char *format, …);</strong> </p>
+<p>说明： </p>
+<p>它们与printf和scanf函数相仿，都是格式化读写函数。 </p>
+<p>不同的是：fprintf和fscanf函数的读写对象不是终端(标准输入输出)，而是磁盘文件。 </p>
+<p>printf函数是将内容输出到终端(屏幕)，因此，fprintf就是将内容输出到磁盘文件了。 </p>
+<p>2.6 <strong>指针重返函数rewind</strong> </p>
+<p>函数原型： </p>
+<p><strong>void rewind(FILE *stream);</strong> </p>
+<p>说明： </p>
+<p>rewind函数的作用是使位置指针重返回文件的开头，属于文件的定位。 </p>
+<p>等价于： (void) fseek(stream, 0L, SEEK_SET) </p>
+<p>2.7 <strong>文件指针设置函数fseek</strong> </p>
+<p>函数原型： </p>
+<p><strong>int fseek(FILE *stream, long offset, intstart);</strong> </p>
+<p>说明： 对流式文件可以进行顺序读写，也可以进行随机读写。 </p>
+<p>关键在于控制文件的位置指针，如果位置指针是按字节位置顺序移动的，就是顺序读写。 </p>
+<p>如果能将位置指针按需要移动到任意位置，就可以实现随机读写。 </p>
+<p>所谓随机读写，是指读完上一个字符(字节)后，并不一定要读写其后续的字符(字节)，而可以读写文件中任意位置上所需要的字符(字节)。 </p>
+<p>start：起始点（用0、1、2代替） </p>
+<p>0代表文件开始，名字为SEEK_SET， </p>
+<p>1代表当前位置，名字为SEEK_CUR， </p>
+<p>2代表文件末尾，名字为SEEK_END。 </p>
+<p>fseek()函数一般用于二进制文件，因为文本文件要发生字符转换，计算位置时往往会发生混乱。 </p>
+<p>2.8 <strong>获得文件指针位置ftell</strong> </p>
+<p>函数原型： <strong>long ftell(FILE *stream);</strong> </p>
+<p>说明： 获得当前文件指针位置 </p>
+<p>3.<strong>二进制文件操作 </strong> </p>
+<p>3.1 <strong>数据块存取函数</strong> </p>
+<p>函数原型： </p>
+<p><strong>size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);</strong> </p>
+<p><strong>size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);</strong> </p>
+<p>说明： </p>
+<p>ptr：对于fread来说，指的是读入数据的存放地址；对于fwrite来说，是要输出数据的地址。 </p>
+<p>size：读写数据时，每笔数据的大小 </p>
+<p>nmemb：读写数据的笔数 </p>
+<p>fp：文件指针 </p>
+<p><strong>fwrite函数</strong>：</p>
+<pre><code>#include&lt;stdio.h&gt;
+int main()
+{
+    int str[10] = {1,2,3,4,5,6,7,8,9,0};
+    FILE *fp ;
+    if((fp = fopen(&quot;a.txt&quot;,&quot;w&quot;) )== NULL)
+    {
+        printf(&quot;file open failed!\n&quot;);
+    }
+    fwrite(str,sizeof(int),10,fp);
+    fclose(fp);
+    return 0;
+}
+</code></pre><p><strong>fread函数</strong>：</p>
+<pre><code>#include&lt;stdio.h&gt;
+int main()
+{
+    int str[10] ;
+    FILE *fp ;
+    if((fp = fopen(&quot;a.txt&quot;,&quot;r&quot;) )== NULL)
+    {
+        printf(&quot;file open failed!\n&quot;);
+    }
+    fread(str,sizeof(int),10,fp);
+    int i;
+    for(i=0; i&lt;10; i++)
+    {
+        printf(&quot;%d &quot;,str[i]);
+    }
+    printf(&quot;\n&quot;);
+    fclose(fp);
+    return 0;
+}
+</code></pre><p>4 <strong>其他(ungetc,getchar ,putchar,printf,scanf,sprintf,sscanf)</strong> </p>
+<p>函数原型： </p>
+<p>*<em>int ungetc(int c, FILE \</em>stream); </p>
+<p>int getchar(void); int putchar(int c); </p>
+<p>int scanf(const char *format, …); </p>
+<p>int sscanf(const char *str, const char *format, …);  </p>
+<p>int printf(const char *format, …); </p>
+<p>int sprintf(char *str, const char *format, …); </p>
+<p>int snprintf(char *str, size_t size, const char *format, …);** </p>
+<p>说明： </p>
+<p>ungetc:将刚从流中读入的字符放回到流。（注意：只能回放一个）  </p>
+<p>getchar() 等价于getc(stdin) 即，从键盘获取字符 </p>
+<p>putchar()等价于putc(c, stdout)即，向显示器写字符 </p>
+<p>scanf() 标准输入 </p>
+<p>sscanf():用法与scanf类似，只是从指定string读取 </p>
+<p>printf():标准输出 </p>
+<p>sprintf():用法与printf类似，只是写入的是指定string，可以把任何数据转换成你想要的字符串格式 </p>
+<p><strong>以下内容转自</strong>：<a href="http://blog.csdn.net/wait_for_taht_day5/article/details/50700471" target="_blank" rel="noopener">【C语言】文件常用读写操作（含读取学生信息示例）CSDN</a> </p>
+<p><strong>int feof(FILE *stream);</strong></p>
+<pre><code>#include&lt;stdio.h&gt;
+int main(void)
+{
+    FILE *stream;
+    /*openafileforreading*/
+    stream = fopen(&quot;DUMMY.FIL&quot;, &quot;r&quot;);
+    /*readacharacterfromthefile*/
+    fgetc(stream);
+    /*checkforEOF*/
+    if(feof(stream))
+        printf(&quot;We have reached the end of file\n&quot;);
+    /*closethefile*/
+    fclose(stream);
+    return 0;
+}
+</code></pre><p>feof(fp)有两个返回值:如果遇到文件结束，函数feof（fp）的值为非零值，否则为0。 </p>
+<p>EOF是文本文件结束的标志。在文本文件中，数据是以字符的ASCⅡ代码值的形式存放，普通字符的ASCⅡ代码的范围是32到127（十进制），EOF的16进制代码为0xFF（十进制为-1），因此可以用EOF作为文件结束标志。[2] 当把数据以二进制形式存放到文件中时，就会有-1值的出现，因此不能采用EOF作为二进制文件的结束标志。 </p>
+<p>为解决这一个问题，ASCI C提供一个feof函数，用来判断文件是否结束。feof函数既可用以判断二进制文件又可用以判断文本文件。</p>
+<pre><code>#include&lt;stdio.h&gt;
+int a;
+char b,c[100];
+int main(){
+    FILE * fp1 = fopen(&quot;input.txt&quot;, &quot;r&quot;);//打开输入文件
+    FILE * fp2 = fopen(&quot;output.txt&quot;, &quot;w&quot;);//打开输出文件
+    if (fp1==NULL || fp2==NULL)//若打开文件失败则退出
+    {
+        puts(&quot;不能打开文件！&quot;);
+        return 0;
+    }
+    fscanf(fp1,&quot;%d&quot;,&amp;a);//从输入文件读取一个整数
+    b=fgetc(fp1);//从输入文件读取一个字符
+    fgets(c,100,fp1);//从输入文件读取一行字符串
+    printf(&quot;%ld&quot;,ftell(fp1));//输出fp1指针当前位置相对于文件首的偏移字节数
+    fputs(c,fp2);//向输出文件写入一行字符串
+    fputc(b,fp2);//向输出文件写入一个字符
+    fprintf(fp2,&quot;%d&quot;,a);//向输出文件写入一个整数
+    fclose(fp1);//关闭输入文件
+    fclose(fp2);//关闭输出文件，相当于保存
+    return 0;
+}
+</code></pre><p><strong>strlen()</strong>函数可以直接求出字符串的长度 追加内容</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+    FILE *fp = fopen(&quot;1.txt&quot;, &quot;a+&quot;);
+    if (fp==0)
+    {
+        printf(&quot;can&apos;t open file\n&quot;); return 0;
+    }
+    fseek(fp, 0, SEEK_END);
+    char sz_add[] = &quot;hello world\n&quot;;
+    fwrite(sz_add, strlen(sz_add), 1, fp);
+    fclose(fp);
+    return 0;
+}
+</code></pre><p><strong>rewind(steam)</strong> </p>
+<p>C 程序中的库函数，功能是将文件内部的指针重新指向一个流的开头 </p>
+<p>C中的fseek函数使用 </p>
+<p>转自：<a href="https://www.cnblogs.com/xingyunblog/p/3675568.html" target="_blank" rel="noopener">https://www.cnblogs.com/xingyunblog/p/3675568.html</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,7 +539,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -208,55 +552,113 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/29/c语言文件及其读写/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/19/hello-world-1/" class="archive-article-date">
-  	<time datetime="2017-12-19T14:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/11/13/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/19/hello-world-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">世界，您好！</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/19/hello-world-1/">世界，您好！</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/未分类//" class="article-tag-list-link color4">未分类</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -279,8 +681,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
