@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 笔记 | 吹风机的想法</title>
+  <title>C++ Primer Plus 笔记 | 吹风机的想法</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="吹风机的想法">
-<meta property="og:url" content="http://yoursite.com/tags/笔记/index.html">
+  <meta name="description" content="学习C++ Primer Plus本书，有感觉比较重要的点进行相关记录">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer Plus 笔记">
+<meta property="og:url" content="http://yoursite.com/2018/12/19/C++ Primer Plus 笔记总结/index.html">
 <meta property="og:site_name" content="吹风机的想法">
+<meta property="og:description" content="学习C++ Primer Plus本书，有感觉比较重要的点进行相关记录">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://hozoy-1251133838.cos.ap-shanghai.myqcloud.com/C%2B%2BPP%20P179.png?q-sign-algorithm=sha1&q-ak=AKIDlGBhGkUGMgNdjcWTJE9sJojIP9A2TRAC&q-sign-time=1545234118;1545235918&q-key-time=1545234118;1545235918&q-header-list=&q-url-param-list=&q-signature=2a450f8a8a869dacb7443db1d3e702bd3d485329&x-cos-security-token=79906e4f5fa577960100ec16dd47ee5be327f9a210001">
+<meta property="og:updated_time" content="2018-12-19T15:51:18.766Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吹风机的想法">
+<meta name="twitter:title" content="C++ Primer Plus 笔记">
+<meta name="twitter:description" content="学习C++ Primer Plus本书，有感觉比较重要的点进行相关记录">
+<meta name="twitter:image" content="https://hozoy-1251133838.cos.ap-shanghai.myqcloud.com/C%2B%2BPP%20P179.png?q-sign-algorithm=sha1&q-ak=AKIDlGBhGkUGMgNdjcWTJE9sJojIP9A2TRAC&q-sign-time=1545234118;1545235918&q-key-time=1545234118;1545235918&q-header-list=&q-url-param-list=&q-signature=2a450f8a8a869dacb7443db1d3e702bd3d485329&x-cos-security-token=79906e4f5fa577960100ec16dd47ee5be327f9a210001">
   
     <link rel="alternative" href="/atom.xml" title="吹风机的想法" type="application/atom+xml">
   
@@ -150,36 +157,163 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-C++ Primer Plus 笔记总结" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/19/C++ Primer Plus 笔记总结/" class="archive-article-date">
-  	<time datetime="2018-12-19T15:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/19/C++ Primer Plus 笔记总结/">C++ Primer Plus 笔记</a>
+    <h1 class="article-title" itemprop="name">
+      C++ Primer Plus 笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/12/19/C++ Primer Plus 笔记总结/" class="archive-article-date">
+  	<time datetime="2018-12-19T15:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>学习C++ Primer Plus本书，有感觉比较重要的点进行相关记录<br><a id="more"></a></p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>cout控制符dex hex oc  分别指示cout以十进制 十六进制 八进制方式显示整数 (默认以dex显示)</p>
+<p>修改格式后，之后所有的cout所输出的数字均为所修改的格式。</p>
+<p>用法:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hexoct2.cpp -- display values in hex and octal</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    <span class="keyword">int</span> chest = <span class="number">42</span>;</span><br><span class="line">    <span class="keyword">int</span> waist = <span class="number">42</span>; </span><br><span class="line">    <span class="keyword">int</span> inseam = <span class="number">42</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Monsieur cuts a striking figure!"</span>  &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"chest = "</span> &lt;&lt; chest &lt;&lt; <span class="string">" (decimal for 42)"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; hex;      <span class="comment">// manipulator for changing number base</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"waist = "</span> &lt;&lt; waist &lt;&lt; <span class="string">" (hexadecimal for 42)"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; oct;      <span class="comment">// manipulator for changing number base</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"inseam = "</span> &lt;&lt; inseam &lt;&lt; <span class="string">" (octal for 42)"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// cin.get();</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; //getchar()</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">char</span> test[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    getchar(); <span class="comment">//1#</span></span><br><span class="line">    <span class="built_in">cin</span>.getline(test, <span class="number">11</span>); <span class="comment">//2#</span></span><br><span class="line">    <span class="comment">//cin &gt;&gt; test; //3#</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; test &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将1#注释掉，运行程序，输入n的值之后，程序就马上结束</p>
+<p>‘\n’是cin.getline()的结束符</p>
+<p>在cin执行的时候，它是会忽略一开始输入的所有换行符’\n’和空格的。所以它并不会将残留的’\n’当做它的结束符<br>而cin.getline()是不会忽略的</p>
+<p>==在cin与cin.getline()或者cin.get()混合使用时，要注意’\n’带来的影响！==</p>
+<hr>
+<p><strong>string</strong>所创建的字符串ch可以使用<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getline(<span class="built_in">cin</span>, ch);</span><br></pre></td></tr></table></figure></p>
+<p>输入</p>
+<hr>
+<p>共用体 为了节省内存而创建 cpppp p94</p>
+<hr>
+<p>不能将 整形赋给指针 ，需要强制类型转换：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * pt;</span><br><span class="line">pt = (<span class="keyword">int</span> *) <span class="number">0xB8000000</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>gets(char<em>) 参数为char</em>, 不接受string类型的参数。</p>
+<hr>
+<p> 数组的代替品 </p>
+<p>1.vecyor</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vi;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; vd(n);</span><br></pre></td></tr></table></figure>
+<p>vecyor 是一个动态数组</p>
+<p>2.array<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">array</span>&lt;<span class="keyword">int</span>, 5&gt; ai;</span><br><span class="line"><span class="built_in">array</span>&lt;<span class="keyword">double</span>, 4&gt; ad = &#123;<span class="number">1.2</span>, <span class="number">2.1</span>, <span class="number">3.43</span>, <span class="number">4.3</span>&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>array 是一个长度固定的数组</p>
+<hr>
+<p>获取 array,vector,string 的元素个数<br>array:  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sizeof</span>(<span class="built_in">array</span>) / <span class="keyword">sizeof</span>(<span class="built_in">array</span>[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>vector:  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>.size()</span><br></pre></td></tr></table></figure>
+<p>string: </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span>.size()</span><br></pre></td></tr></table></figure>
+<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span>.setf(ios_base::boolalpha);</span><br></pre></td></tr></table></figure>
+<p>cout 在显示bool值之前将它们转化为int，但上述函数调用设置了一个标记，该标记命令cout显示true和false，而不是1和0.</p>
+<hr>
+<p>for语句初始化部分可以声明一个变量，但离开for语句后这个变量将消失不可用。</p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// waiting.cpp -- using clock() in a time-delay loop</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt; // describes clock() function, clock_t type</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter the delay time, in seconds: "</span>;</span><br><span class="line">    <span class="keyword">float</span> secs;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; secs;</span><br><span class="line">    <span class="keyword">clock_t</span> delay = secs * CLOCKS_PER_SEC;  <span class="comment">// convert to clock ticks</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"starting\a\n"</span>;</span><br><span class="line">    <span class="keyword">clock_t</span> start = clock();</span><br><span class="line">    <span class="keyword">while</span> (clock() - start &lt; delay )        <span class="comment">// wait until time elapses</span></span><br><span class="line">        ;                                   <span class="comment">// note the semicolon</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"done \a\n"</span>;</span><br><span class="line">    <span class="comment">// cin.get();</span></span><br><span class="line">    <span class="comment">// cin.get();</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用clock()和头文件ctime创建的延迟循环代码 P149</p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// textin2.cpp -- using cin.get(char)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    <span class="keyword">char</span> ch;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter characters; enter # to quit:\n"</span>;</span><br><span class="line">    <span class="built_in">cin</span>.get(ch);        <span class="comment">// use the cin.get(ch) function</span></span><br><span class="line">    <span class="keyword">while</span> (ch != <span class="string">'#'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ch;</span><br><span class="line">        ++count;</span><br><span class="line">        <span class="built_in">cin</span>.get(ch);    <span class="comment">// use it again</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; count &lt;&lt; <span class="string">" characters read\n"</span>;</span><br><span class="line"><span class="comment">// get rid of rest of line</span></span><br><span class="line">    <span class="comment">// while (cin.get() != '\n')</span></span><br><span class="line">    <span class="comment">//    ;</span></span><br><span class="line">    <span class="comment">//cin.get();</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>合理利用缓冲区的例子 P153</p>
+<hr>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p>字符函数库<strong>cctype</strong>  P179<br><img src="https://hozoy-1251133838.cos.ap-shanghai.myqcloud.com/C%2B%2BPP%20P179.png?q-sign-algorithm=sha1&amp;q-ak=AKIDlGBhGkUGMgNdjcWTJE9sJojIP9A2TRAC&amp;q-sign-time=1545234118;1545235918&amp;q-key-time=1545234118;1545235918&amp;q-header-list=&amp;q-url-param-list=&amp;q-signature=2a450f8a8a869dacb7443db1d3e702bd3d485329&amp;x-cos-security-token=79906e4f5fa577960100ec16dd47ee5be327f9a210001" alt=""></p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span>&lt;&lt;fixed  <span class="comment">//用一般的方式输出浮点型，例如Ｃ＋＋程序在控制台显示的时候大一点的数，显示的时候使用了科学计数法，使用该命令即可像一般的方式显示</span></span><br><span class="line"><span class="built_in">cout</span>.precision（<span class="number">2</span>） <span class="comment">//设置精确度为2，并返回上一次的设置。</span></span><br><span class="line"><span class="built_in">cout</span>.setf（iOS_base::showpoint）  <span class="comment">//显示浮点数小数点后面的零。</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><a href="http://blog.csdn.net/FX677588/article/details/52717245" target="_blank" rel="noopener">http://blog.csdn.net/FX677588/article/details/52717245</a></p>
+<p>关于字符串string、char*字符串数组与其他类型转换</p>
+<p>string＜——＞char*</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//char*转为string</span></span><br><span class="line"><span class="keyword">char</span> * nzArr = <span class="string">"abcd"</span>;</span><br><span class="line"><span class="built_in">string</span> str = nzArr;</span><br><span class="line"></span><br><span class="line"><span class="comment">//string转为char*</span></span><br><span class="line"><span class="built_in">string</span> str = <span class="string">"abcd"</span>;</span><br><span class="line"><span class="keyword">char</span>* nzArr = <span class="keyword">const_cast</span>&lt;<span class="keyword">char</span>*&gt;(str.c_str());</span><br></pre></td></tr></table></figure>
+<hr>
+<p>string可以像数组arr[5]一样这样指定某个char string[5]</p>
+<hr>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p>函数指针</p>
+<ol>
+<li>函数名即为函数地址</li>
+<li>使用函数指针需要先进行声明</li>
+<li>函数指针中调用函数</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fun_ptr.cpp -- pointers to functions</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">betsy</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">pam</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// second argument is pointer to a type double function that</span></span><br><span class="line"><span class="comment">// takes a type int argument</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">estimate</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">double</span> (*pf)(<span class="keyword">int</span>))</span></span>;</span><br><span class="line"><span class="comment">//先声明带有函数指针参数的函数或者直接声明函数指针</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    <span class="keyword">int</span> code;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"How many lines of code do you need? "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; code;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Here's Betsy's estimate:\n"</span>;</span><br><span class="line">    estimate(code, betsy);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Here's Pam's estimate:\n"</span>;</span><br><span class="line">    estimate(code, pam);</span><br><span class="line">    <span class="comment">// cin.get();</span></span><br><span class="line">    <span class="comment">// cin.get();</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">betsy</span><span class="params">(<span class="keyword">int</span> lns)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.05</span> * lns;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">pam</span><span class="params">(<span class="keyword">int</span> lns)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.03</span> * lns + <span class="number">0.0004</span> * lns * lns;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">estimate</span><span class="params">(<span class="keyword">int</span> lines, <span class="keyword">double</span> (*pf)(<span class="keyword">int</span>))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; lines &lt;&lt; <span class="string">" lines will take "</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (*pf)(lines) &lt;&lt; <span class="string">" hour(s)\n"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h2><p>函数模板<br>声明和定义时均需要<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="comment">// or &lt;class T&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="第十一章"><a href="#第十一章" class="headerlink" title="第十一章"></a>第十一章</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Time A, B, C, D;</span><br><span class="line">D = A + B + C;</span><br><span class="line"><span class="comment">//等同于以下语句</span></span><br><span class="line">D = A.<span class="keyword">operator</span>+(B.<span class="keyword">operator</span>+(C));</span><br></pre></td></tr></table></figure>
+<h2 id="第十二章"><a href="#第十二章" class="headerlink" title="第十二章"></a>第十二章</h2><p>析构函数将在定义对象的代码块执行完毕时调用</p>
+<h2 id="c-文件操作"><a href="#c-文件操作" class="headerlink" title="c++ 文件操作"></a>c++ 文件操作</h2><p>要在 C++ 中进行文件处理，必须在 C++ 源代码文件中包含头文件 <iostream> 和<br> <fstream> 。</fstream></iostream></p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *filename, ios::openmode mode)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>open() 成员函数的第一参数指定要打开的文件的名称和位置，第二个参数<br>定义文件被打开的模式。</p>
+<table>
+<thead>
+<tr>
+<th>模式标志</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ios::app</td>
+<td>追加模式。所有写入都追加到文件末尾。</td>
+</tr>
+<tr>
+<td>ios::ate</td>
+<td>文件打开后定位到文件末尾。</td>
+</tr>
+<tr>
+<td>ios::in</td>
+<td>打开文件用于读取。</td>
+</tr>
+<tr>
+<td>ios::out</td>
+<td>打开文件用于写入。</td>
+</tr>
+<tr>
+<td>ios::trunc</td>
+<td>如果该文件已经存在，其内容将在打开文件之前被截断，即把文件长度设为 0。</td>
+</tr>
+</tbody>
+</table>
+<p>例如，如果您想要以写入模式打开<br>文件，并希望截断文件，以防文件已存在，那么您可以使用下面的语法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ofstream outfile;</span><br><span class="line">outfile.open(<span class="string">"file.dat"</span>, ios::out | ios::trunc );</span><br></pre></td></tr></table></figure>
+<hr>
+<p>关闭文件的close()成员：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>实例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> data[<span class="number">100</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 以写模式打开文件</span></span><br><span class="line">    ofstream outfile;</span><br><span class="line">    outfile.open(<span class="string">"afile.dat"</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Writing to the file"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter your name: "</span>;</span><br><span class="line">    <span class="built_in">cin</span>.getline(data, <span class="number">100</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 向文件写入用户输入的数据</span></span><br><span class="line">    outfile &lt;&lt; data &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter your age: "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; data;</span><br><span class="line">    <span class="built_in">cin</span>.ignore();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 再次向文件写入用户输入的数据</span></span><br><span class="line">    outfile &lt;&lt; data &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// 关闭打开的文件</span></span><br><span class="line">    outfile.close();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 以读模式打开文件</span></span><br><span class="line">    ifstream infile;</span><br><span class="line">    infile.open(<span class="string">"afile.dat"</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Reading from the file"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    infile &gt;&gt; data;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 在屏幕上写入数据</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; data &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// 再次从文件读取数据，并显示它</span></span><br><span class="line">    infile &gt;&gt; data;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; data &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// 关闭打开的文件</span></span><br><span class="line">    infile.close();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定位到 fileObject 的第 n 个字节（假设是 ios::beg）</span></span><br><span class="line">fileObject.seekg( n );</span><br><span class="line"><span class="comment">// 把文件的读指针从 fileObject 当前位置向后移 n 个字节</span></span><br><span class="line">fileObject.seekg( n, ios::cur );</span><br><span class="line"><span class="comment">// 把文件的读指针从 fileObject 末尾往回移 n 个字节</span></span><br><span class="line">fileObject.seekg( n, ios::end );</span><br><span class="line"><span class="comment">// 定位到 fileObject 的末尾</span></span><br><span class="line">fileObject.seekg( <span class="number">0</span>, ios::end );</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,7 +325,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -204,17 +338,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/19/C++ Primer Plus 笔记总结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/11/14/Java对于字符串的处理总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java对于字符串的处理总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -237,9 +458,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
