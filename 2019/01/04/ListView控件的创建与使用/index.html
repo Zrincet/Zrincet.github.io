@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/12 | 吹风机的想法</title>
+  <title>ListView控件的创建与使用 | 吹风机的想法</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="吹风机的想法">
-<meta property="og:url" content="http://yoursite.com/archives/2017/12/index.html">
+  <meta name="description" content="通过创建ListView控件并利用自定义适配器将数据传入ListView以达到目标效果，并添点击item产生的交互作用，增强实用性。 ListView效果：">
+<meta name="keywords" content="UI,控件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ListView控件的创建与使用">
+<meta property="og:url" content="http://yoursite.com/2019/01/04/ListView控件的创建与使用/index.html">
 <meta property="og:site_name" content="吹风机的想法">
+<meta property="og:description" content="通过创建ListView控件并利用自定义适配器将数据传入ListView以达到目标效果，并添点击item产生的交互作用，增强实用性。 ListView效果：">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://hozoy-1251133838.cos.ap-shanghai.myqcloud.com/20190104002514.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/834105/201512/834105-20151220133119758-1793380210.jpg">
+<meta property="og:image" content="https://hozoy-1251133838.cos.ap-shanghai.myqcloud.com/20190104180028.png">
+<meta property="og:updated_time" content="2019-01-04T10:12:11.661Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吹风机的想法">
+<meta name="twitter:title" content="ListView控件的创建与使用">
+<meta name="twitter:description" content="通过创建ListView控件并利用自定义适配器将数据传入ListView以达到目标效果，并添点击item产生的交互作用，增强实用性。 ListView效果：">
+<meta name="twitter:image" content="https://hozoy-1251133838.cos.ap-shanghai.myqcloud.com/20190104002514.png">
   
     <link rel="alternative" href="/atom.xml" title="吹风机的想法" type="application/atom+xml">
   
@@ -142,75 +151,207 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ListView控件的创建与使用" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/29/c语言文件及其读写/" class="archive-article-date">
-  	<time datetime="2017-12-29T03:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-29</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/29/c语言文件及其读写/">c语言文件及其读写</a>
+    <h1 class="article-title" itemprop="name">
+      ListView控件的创建与使用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/01/04/ListView控件的创建与使用/" class="archive-article-date">
+  	<time datetime="2019-01-04T10:06:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过创建ListView控件并利用自定义适配器将数据传入ListView以达到目标效果，并添点击item产生的交互作用，增强实用性。</p>
+<h3 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h3><p>效果：</p>
+<p><img src="https://hozoy-1251133838.cos.ap-shanghai.myqcloud.com/20190104002514.png" width="30%" height="30%"></p>
+<a id="more"></a>
+<h4 id="1-添加ListView控件"><a href="#1-添加ListView控件" class="headerlink" title="1. 添加ListView控件"></a>1. 添加ListView控件</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ListView</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:id</span>=<span class="string">"@+id/list_view"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-创建自定义ListView中每一item的布局"><a href="#2-创建自定义ListView中每一item的布局" class="headerlink" title="2. 创建自定义ListView中每一item的布局"></a>2. 创建自定义ListView中每一item的布局</h4><p>fruit_layout.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/fruit_image"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/fruit_name"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_gravity</span>=<span class="string">"center_vertical"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_marginLeft</span>=<span class="string">"10dp"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="3-创建数据源，封装数据"><a href="#3-创建数据源，封装数据" class="headerlink" title="3. 创建数据源，封装数据"></a>3. 创建数据源，封装数据</h4><p>例如创建Fruit.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> imageId;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Fruit</span><span class="params">(String name, <span class="keyword">int</span> imageId)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.imageId = imageId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getImageId</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> imageId;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使刚才创建的ListView布局中的数据与此类的对象一一对应</p>
+<h4 id="4-创建自定义适配器"><a href="#4-创建自定义适配器" class="headerlink" title="4. 创建自定义适配器"></a>4. 创建自定义适配器</h4><p>数据适配器建立了数据源与ListView之间的适配关系，将数据源转换为ListView能够显示的数据格式，从而将数据的来源与数据的显示进行解耦，降低程序的耦合性。</p>
+<p><img src="https://images2015.cnblogs.com/blog/834105/201512/834105-20151220133119758-1793380210.jpg" alt="image"><br>通常使用BaseAdapter，ArrayAdapter，SimpleAdapter三种适配器其一  </p>
+<p>这里用ArrayAdapter作为例子<br>创建FruitAdapter类作为ArrayAdapter的子类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitAdapter</span> <span class="keyword">extends</span> <span class="title">ArrayAdapter</span>&lt;<span class="title">Fruit</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> resourceId;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FruitAdapter</span><span class="params">(Context context, <span class="keyword">int</span> textViewResourceId,</span></span></span><br><span class="line"><span class="function"><span class="params">                        List&lt;Fruit&gt; objects)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, textViewResourceId, objects);</span><br><span class="line">        resourceId = textViewResourceId;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">getView</span><span class="params">(<span class="keyword">int</span> position, View convertView, ViewGroup parent)</span> </span>&#123;</span><br><span class="line">        Fruit fruit = getItem(position); <span class="comment">// 获取当前项的Fruit实例</span></span><br><span class="line">        View view;</span><br><span class="line">        ViewHolder viewHolder;</span><br><span class="line">        <span class="keyword">if</span>(convertView == <span class="keyword">null</span>) &#123;</span><br><span class="line">            view = LayoutInflater.from(getContext()).inflate(resourceId, parent,</span><br><span class="line">                    <span class="keyword">false</span>);</span><br><span class="line">            viewHolder = <span class="keyword">new</span> ViewHolder();</span><br><span class="line">            viewHolder.fruitImage = (ImageView) view.findViewById(R.id.fruit_image);</span><br><span class="line">            viewHolder.fruitName = (TextView) view.findViewById(R.id.fruit_name);</span><br><span class="line">            view.setTag(viewHolder);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            view = convertView;</span><br><span class="line">            viewHolder = (ViewHolder) view.getTag();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        viewHolder.fruitImage.setImageResource(fruit.getImageId());</span><br><span class="line">        viewHolder.fruitName.setText(fruit.getName());</span><br><span class="line">        <span class="keyword">return</span> view;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ViewHolder</span></span>&#123;</span><br><span class="line">        ImageView fruitImage;</span><br><span class="line">        TextView fruitName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>先重写构造函数，将ListView布局id保存：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private int resourceId;</span><br><span class="line">public FruitAdapter(Context context, int textViewResourceId,</span><br><span class="line">                    List&lt;Fruit&gt; objects) &#123;</span><br><span class="line">    super(context, textViewResourceId, objects);</span><br><span class="line">    resourceId = textViewResourceId;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>重写getView()方法，这个方法在每个子项被滚动到屏幕内的时候会被调用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Fruit fruit = getItem(position); <span class="comment">// 获取当前项的Fruit实例</span></span><br><span class="line">view = LayoutInflater.from(getContext()).inflate(resourceId, parent,<span class="keyword">false</span>);</span><br><span class="line"><span class="comment">//加载布局</span></span><br></pre></td></tr></table></figure>
+<p>使用ListView的缓存机制convertView和viewHolder优化加载过程（被称为“文艺式”）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> View <span class="title">getView</span><span class="params">(<span class="keyword">int</span> position, View convertView, ViewGroup parent)</span> </span>&#123;</span><br><span class="line">    Fruit fruit = getItem(position); <span class="comment">// 获取当前项的Fruit实例</span></span><br><span class="line">    View view;</span><br><span class="line">    ViewHolder viewHolder;</span><br><span class="line">    <span class="comment">//如果无缓存</span></span><br><span class="line">    <span class="keyword">if</span>(convertView == <span class="keyword">null</span>) &#123;</span><br><span class="line">        view = LayoutInflater.from(getContext()).inflate(resourceId, parent,</span><br><span class="line">                <span class="keyword">false</span>);</span><br><span class="line">        viewHolder = <span class="keyword">new</span> ViewHolder();</span><br><span class="line">        viewHolder.fruitImage = (ImageView) view.findViewById(R.id.fruit_image);</span><br><span class="line">        viewHolder.fruitName = (TextView) view.findViewById(R.id.fruit_name);</span><br><span class="line">        view.setTag(viewHolder);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        view = convertView;</span><br><span class="line">        viewHolder = (ViewHolder) view.getTag();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    viewHolder.fruitImage.setImageResource(fruit.getImageId());</span><br><span class="line">    viewHolder.fruitName.setText(fruit.getName());</span><br><span class="line">    <span class="keyword">return</span> view;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewHolder</span></span>&#123;</span><br><span class="line">    ImageView fruitImage;</span><br><span class="line">    TextView fruitName;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果检测到没有缓存，则将资源缓存到viewHolder中，并存入view中。有缓存时则直接调用viewHolder。</p>
+<h4 id="5-在MainActivity中调用适配器"><a href="#5-在MainActivity中调用适配器" class="headerlink" title="5. 在MainActivity中调用适配器"></a>5. 在MainActivity中调用适配器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Fruit&gt; fruitList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        initFruits(); <span class="comment">// 初始化水果数据</span></span><br><span class="line">        FruitAdapter adapter = <span class="keyword">new</span> FruitAdapter(MainActivity.<span class="keyword">this</span>,</span><br><span class="line">                R.layout.fruit_item, fruitList);</span><br><span class="line">        ListView listView = (ListView) findViewById(R.id.list_view);</span><br><span class="line">        listView.setAdapter(adapter);</span><br><span class="line">        listView.setOnItemClickListener(<span class="keyword">new</span> AdapterView.OnItemClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onItemClick</span><span class="params">(AdapterView&lt;?&gt; parent, View view,</span></span></span><br><span class="line"><span class="function"><span class="params">                                    <span class="keyword">int</span> position, <span class="keyword">long</span> id)</span> </span>&#123;</span><br><span class="line">                Fruit fruit = fruitList.get(position);</span><br><span class="line">                Toast.makeText(MainActivity.<span class="keyword">this</span>, fruit.getName(),</span><br><span class="line">                        Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initFruits</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">            Fruit apple = <span class="keyword">new</span> Fruit(<span class="string">"Apple"</span>, R.drawable.apple_pic);</span><br><span class="line">            fruitList.add(apple);</span><br><span class="line">            Fruit banana = <span class="keyword">new</span> Fruit(<span class="string">"Banana"</span>, R.drawable.banana_pic);</span><br><span class="line">            fruitList.add(banana);</span><br><span class="line">            Fruit orange = <span class="keyword">new</span> Fruit(<span class="string">"Orange"</span>, R.drawable.orange_pic);</span><br><span class="line">            fruitList.add(orange);</span><br><span class="line">            Fruit watermelon = <span class="keyword">new</span> Fruit(<span class="string">"Watermelon"</span>, R.drawable.watermelon_pic);</span><br><span class="line">            fruitList.add(watermelon);</span><br><span class="line">            Fruit pear = <span class="keyword">new</span> Fruit(<span class="string">"Pear"</span>, R.drawable.pear_pic);</span><br><span class="line">            fruitList.add(pear);</span><br><span class="line">            Fruit grape = <span class="keyword">new</span> Fruit(<span class="string">"Grape"</span>, R.drawable.grape_pic);</span><br><span class="line">            fruitList.add(grape);</span><br><span class="line">            Fruit pineapple = <span class="keyword">new</span> Fruit(<span class="string">"Pineapple"</span>, R.drawable.pineapple_pic);</span><br><span class="line">            fruitList.add(pineapple);</span><br><span class="line">            Fruit strawberry = <span class="keyword">new</span> Fruit(<span class="string">"Strawberry"</span>, R.drawable.strawberry_pic);</span><br><span class="line">            fruitList.add(strawberry);</span><br><span class="line">            Fruit cherry = <span class="keyword">new</span> Fruit(<span class="string">"Cherry"</span>, R.drawable.cherry_pic);</span><br><span class="line">            fruitList.add(cherry);</span><br><span class="line">            Fruit mango = <span class="keyword">new</span> Fruit(<span class="string">"Mango"</span>, R.drawable.mango_pic);</span><br><span class="line">            fruitList.add(mango);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将ListView中用到的数据用自定义的init方法逐个添加到数组中，然后将上下文、布局、数组用于创建的适配器对象中。 </p>
+<p>布局的样式也可以调用系统自带的一些样式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">simple_list_item1//单独的一行文本框</span><br><span class="line"></span><br><span class="line">simple_list_item2//有两个文本框组成</span><br><span class="line"></span><br><span class="line">simple_list_item_checked//每项都是由一个已选中的列表项</span><br><span class="line"></span><br><span class="line">simple_list_item_multiple_choice//都带有一个复选框</span><br><span class="line"></span><br><span class="line">simple_list_item_single_choice//都带有一个单选框</span><br></pre></td></tr></table></figure>
+<p>然后调用ListView的setAdapter() 方法，将构建好的适配器对象传递进去，这样<br>ListView和数据之间的关联就建立完成了。  </p>
+<p>最后用setOnItemClickListener()对ListView注册监听器，当点击item时会回调onItemClick，position中有记录点击的哪一个item，然后进行相应操作。</p>
+<p>效果：<br><img src="https://hozoy-1251133838.cos.ap-shanghai.myqcloud.com/20190104180028.png" width="30%" height="30%"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">文件</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">UI</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">读写</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">控件</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/C语言//" class="article-tag-list-link color4">C语言</a>
+        			<a href="/categories/Android//" class="article-tag-list-link color3">Android</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/04/ListView控件的创建与使用/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/01/04/Android UI布局基础知识总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android UI布局基础知识总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -234,8 +375,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
